@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Upload</h1>
+<!-- Upload form. Note enctype attribute! -->
+<form action="{% url 'list' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <p>{{ form.file }}</p>
+  <p><input type="submit" value="Upload" /></p>
+</form>
+{% for archivo in lista_excel%}
+<p>
+    {{ str(archivo.file)}}
+</p>
+{% endblock %}
