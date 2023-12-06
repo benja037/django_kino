@@ -1,5 +1,5 @@
 import requests
-from apps.kinoprincipal.models import Kinodb, Rekinodb, Chanchitodb, Combodb, Chao1db, Chao2db, Chao3db
+from .models import Kinodb, Rekinodb, Chanchitodb, Combodb, Chao1db, Chao2db, Chao3db
 from bs4 import BeautifulSoup
 import datetime
 

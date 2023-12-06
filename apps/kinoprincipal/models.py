@@ -157,3 +157,7 @@ class Chao3db(models.Model):
 
 class Archivosxl(models.Model):
     file = models.FileField(upload_to='excels')
+
+    def delete(self):
+        self.file.delete()
+        super().delete()

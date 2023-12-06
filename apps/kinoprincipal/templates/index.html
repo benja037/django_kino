@@ -1,10 +1,14 @@
 {% extends 'base.html' %} {% block content %}
 <h1>AAA</h1>
-<ul>
+<div>
   {% for p in RESULTADO %}
-  <li>
-    {{p.number1}}-{{p.number2}}-{{p.number3}}-{{p.number4}}-{{p.number5}}-{{p.number6}}-{{p.number7}}-{{p.number8}}-{{p.number9}}-{{p.number10}}-{{p.number11}}-{{p.number12}}-{{p.number13}}-{{p.number14}}
-  </li>
+
+  <p>
+    {{p.id_sorteo}}-{{p.fecha}}-{{p.number1}}-{{p.number2}}-{{p.number3}}-{{p.number4}}-{{p.number5}}-{{p.number6}}-{{p.number7}}-{{p.number8}}-{{p.number9}}-{{p.number10}}-{{p.number11}}-{{p.number12}}-{{p.number13}}-{{p.number14}}
+  </p>
+  <button>
+    <a href="{% url 'delete-row' database p.pk %}"> Delete row </a>
+  </button>
   {% endfor %}
-</ul>
+</div>
 {% endblock %}
