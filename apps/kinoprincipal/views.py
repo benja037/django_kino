@@ -19,54 +19,55 @@ def index(request):
 def resultado_kino(request):
     resultado = Kinodb.objects.all
     context = {'RESULTADO': resultado, 'database': Kinodb.__name__}
-    return render(request, 'index.html', context)
+    return render(request, 'ver_bd.html', context)
 
 
 def resultado_rekino(request):
 
     resultado = Rekinodb.objects.all
-    context = {'RESULTADO': resultado}
-    return render(request, 'index.html', context)
+    context = {'RESULTADO': resultado, 'database': Rekinodb.__name__}
+    return render(request, 'ver_bd.html', context)
 
 
 def resultado_chanchito(request):
 
     resultado = Chanchitodb.objects.all
-    context = {'RESULTADO': resultado}
-    return render(request, 'index.html', context)
+    context = {'RESULTADO': resultado, 'database': Chanchitodb.__name__}
+    return render(request, 'ver_bd.html', context)
 
 
 def resultado_combo(request):
 
     resultado = Combodb.objects.all
-    context = {'RESULTADO': resultado}
-    return render(request, 'index.html', context)
+    context = {'RESULTADO': resultado, 'database': Combodb.__name__}
+    return render(request, 'ver_bd.html', context)
 
 
 def resultado_chao1(request):
 
     resultado = Chao1db.objects.all
-    context = {'RESULTADO': resultado}
-    return render(request, 'index.html', context)
+    context = {'RESULTADO': resultado, 'database': Chao1db.__name__}
+    return render(request, 'ver_bd.html', context)
 
 
 def resultado_chao2(request):
 
     resultado = Chao2db.objects.all
-    context = {'RESULTADO': resultado}
-    return render(request, 'index.html', context)
+    context = {'RESULTADO': resultado, 'database': Chao2db.__name__}
+    return render(request, 'ver_bd.html', context)
 
 
 def resultado_chao3(request):
 
     resultado = Chao3db.objects.all
-    context = {'RESULTADO': resultado}
-    return render(request, 'index.html', context)
+    context = {'RESULTADO': resultado, 'database': Chao3db.__name__}
+    return render(request, 'ver_bd.html', context)
 
 
 def upload_file(request):
     lista_excel = Archivosxl.objects.all
     if request.method == 'POST':
+        print('request', request)
         form = UploadFileForm(request.POST, request.FILES)
         file = request.FILES['file']
         file_to_db = Archivosxl.objects.create(file=file)
