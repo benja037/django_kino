@@ -51,16 +51,14 @@ def Importar_datos(archivo):
                    int_inicio_rekino, columna_ganadores_rekino)
     excel_a_modelo(ws, Chanchitodb, rango_casillas_chanchito,
                    int_inicio_chanchito, columna_ganadores_chanchito)
-    excel_a_modelo(ws, Combodb, rango_casillas_kino,
+    excel_a_modelo(ws, Combodb, rango_casillas_combo,
                    int_inicio_combo, columna_ganadores_combo)
-    excel_a_modelo(ws, Chao1db, rango_casillas_kino,
+    excel_a_modelo(ws, Chao1db, rango_casillas_chao1,
                    int_inicio_chao1, columna_ganadores_chao1)
-    excel_a_modelo(ws, Chao2db, rango_casillas_kino,
+    excel_a_modelo(ws, Chao2db, rango_casillas_chao2,
                    int_inicio_chao2, columna_ganadores_chao2)
-    excel_a_modelo(ws, Chao3db, rango_casillas_kino,
+    excel_a_modelo(ws, Chao3db, rango_casillas_chao3,
                    int_inicio_chao3, columna_ganadores_chao3)
-
-# corregir fecha
 
 
 def excel_a_modelo(ws, Modelo, rango_casillas, int_inicio, columna_ganadores):
@@ -68,45 +66,29 @@ def excel_a_modelo(ws, Modelo, rango_casillas, int_inicio, columna_ganadores):
     lista_total = []
     contador = int_inicio
     for row in ws[rango_casillas]:
-        # print(row)
         str_contador = str(contador)
-        # print(str_contador)
-
         sorteo = ws["A" + str_contador].value
         fecha = ws["B" + str_contador].value
 
         numero1 = int(row[0].value)
-        # print(numero1)
         numero2 = int(row[1].value)
-        # print(numero2)
         numero3 = int(row[2].value)
-        # print(numero3)
         numero4 = int(row[3].value)
-        # print(numero4)
         numero5 = int(row[4].value)
-        # print(numero5)
         numero6 = int(row[5].value)
-        # print(numero6)
         numero7 = int(row[6].value)
-        # print(numero7)
         numero8 = int(row[7].value)
-        # print(numero8)
         numero9 = int(row[8].value)
-        # print(numero9)
         numero10 = int(row[9].value)
-        # print(numero10)
         numero11 = int(row[10].value)
-        # print(numero11)
         numero12 = int(row[11].value)
-        # print(numero12)
         numero13 = int(row[12].value)
-        # print(numero13)
         numero14 = int(row[13].value)
-        # print(numero14)
-        # print(ws[columna_ganadores + str_contador])
         ganador = int(ws[columna_ganadores + str_contador].value)
+        tipo_ingreso = "Excel"
+
         elemento = Modelo(id_sorteo=sorteo, fecha=fecha, number1=numero1, number2=numero2, number3=numero3, number4=numero4, number5=numero5, number6=numero6,
-                          number7=numero7, number8=numero8, number9=numero9, number10=numero10, number11=numero11, number12=numero12, number13=numero13, number14=numero14, num_ganadores=ganador)
+                          number7=numero7, number8=numero8, number9=numero9, number10=numero10, number11=numero11, number12=numero12, number13=numero13, number14=numero14, num_ganadores=ganador, tipo_ingreso=tipo_ingreso)
         lista_total.append(elemento)
         contador = contador + 1
 

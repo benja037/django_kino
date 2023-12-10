@@ -13,6 +13,9 @@ urlpatterns = [
     path('chao2/', views.resultado_chao2, name='chao2_index'),
     path('chao3/', views.resultado_chao3, name='chao3_index'),
     path('archivos/', views.upload_file, name='archivos_index'),
+
+
+    #Url de botones
     path('delete/<str:model_name>/<int:pk>/',
          views.delete_file, name='delete-file'),
     path('todatabase/<int:pk>/', views.agregar_a_db, name='agregar-a-db'),

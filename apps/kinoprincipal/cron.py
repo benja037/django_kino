@@ -57,9 +57,10 @@ def pasar_modelo(tipo_sorteo_db, tipo_numeros, numero_sorteo, fecha):
     number12 = tipo_numeros[11]
     number13 = tipo_numeros[12]
     number14 = tipo_numeros[13]
+    tipo_ingreso = "Cron"
 
     print(tipo_sorteo_db, fecha, numero_sorteo, number1, " ", number2, " ", number3, " ", number4, " ", number5, " ", number6, " ", number7, " ",
-          number8, " ", number9, " ", number10, " ", number11, " ", number12, " ", number13, " ", number14)
+          number8, " ", number9, " ", number10, " ", number11, " ", number12, " ", number13, " ", number14, " ", tipo_ingreso)
 
     tipo_sorteo_db.objects.create(id_sorteo=numero_sorteo, fecha=fecha, number1=number1, number2=number2, number3=number3, number4=number4, number5=number5, number6=number6,
-                                  number7=number7, number8=number8, number9=number9, number10=number10, number11=number11, number12=number12, number13=number13, number14=number14)
+                                  number7=number7, number8=number8, number9=number9, number10=number10, number11=number11, number12=number12, number13=number13, number14=number14, tipo_ingreso=tipo_ingreso)
