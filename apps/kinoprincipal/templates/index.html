@@ -1,12 +1,113 @@
 {% extends 'base.html' %} {% block content %}
-<h1>AAA</h1>
-<div>
-  {% for p in RESULTADO %}
+<h1>Ultimos Resultados Kino</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless fs-6 text-center">
+          <tbody>
+            {% for p in Resultados_kino %} {% include 'partials/rows.html' %}
+            {%endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <p>
-    {{p.id_sorteo}}-{{p.fecha}}-{{p.number1}}-{{p.number2}}-{{p.number3}}-{{p.number4}}-{{p.number5}}-{{p.number6}}-{{p.number7}}-{{p.number8}}-{{p.number9}}-{{p.number10}}-{{p.number11}}-{{p.number12}}-{{p.number13}}-{{p.number14}}
-  </p>
+<h1>Ultimos Resultados Rekino</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless fs-6 text-center">
+          <tbody>
+            {% for p in Resultados_rekino %} {% include 'partials/rows.html' %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
-  {% endfor %}
+<h1>Ultimos Resultados Chanchito Regalón</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless fs-6 text-center">
+          <tbody>
+            {% for p in Resultados_rekino %} {% include 'partials/rows.html' %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1>Ultimos Resultados Combo</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless fs-6 text-center">
+          <tbody>
+            {% for p in Resultados_combo %} {% include 'partials/rows.html' %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1>Ultimos Resultados Chao jefe 1</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless fs-6 text-center">
+          <tbody>
+            {% for p in Resultados_chao1 %} {% include 'partials/rows.html' %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1>Ultimos Resultados Chao Jefe 2</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless fs-6 text-center">
+          <tbody>
+            {% for p in Resultados_chao2 %} {% include 'partials/rows.html' %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1>Ultimos Resultados Chao Jefe 3</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless fs-6 text-center">
+          <tbody>
+            {% for p in Resultados_chao3 %} {% include 'partials/rows.html' %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}

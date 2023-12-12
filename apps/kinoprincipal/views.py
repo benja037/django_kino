@@ -9,10 +9,21 @@ from django.apps import apps
 
 def index(request):
 
-    resultado = Kinodb.objects.all
+    resultados_kino = Kinodb.objects.order_by("-fecha")[:5].values()
+    resultados_rekino = Rekinodb.objects.order_by("-fecha")[:5].values()
+    resultados_chanchito = Chanchitodb.objects.order_by("-fecha")[:5].values()
+    resultados_combo = Combodb.objects.order_by("-fecha")[:5].values()
+    resultados_chao1 = Chao1db.objects.order_by("-fecha")[:5].values()
+    resultados_chao2 = Chao2db.objects.order_by("-fecha")[:5].values()
+    resultados_chao3 = Chao3db.objects.order_by("-fecha")[:5].values()
+    context = {'Resultados_kino': resultados_kino,
+               'Resultados_rekino': resultados_rekino,
+               'Resultados_chanchito': resultados_chanchito,
+               'Resultados_combo': resultados_combo,
+               'Resultados_chao1': resultados_chao1,
+               'Resultados_chao2': resultados_chao2,
+               'Resultados_chao3': resultados_chao3}
 
-    context = {'RESULTADO': resultado, 'database': Kinodb.__name__}
-    print(context)
     return render(request, 'index.html', context)
 
 
