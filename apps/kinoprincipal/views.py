@@ -4,6 +4,7 @@ from .forms import UploadFileForm
 from .models import Archivosxl, Kinodb, Rekinodb, Chanchitodb, Combodb, Chao1db, Chao2db, Chao3db
 from .excel import Importar_datos
 from django.apps import apps
+from statistics import mode
 # Refrigerador.objects.latest('fecha_registro')
 
 
@@ -27,53 +28,12 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-def resultado_kino(request):
-    resultado = Kinodb.objects.all
-    context = {'RESULTADO': resultado, 'database': Kinodb.__name__}
+def resultados(request):
+    path = request.path
+    modelo = find_modelo(path)
+    resultado = modelo.objects.all
+    context = {'RESULTADO': resultado, 'database': modelo}
     return render(request, 'ver_bd.html', context)
-
-
-def resultado_rekino(request):
-
-    resultado = Rekinodb.objects.all
-    context = {'RESULTADO': resultado, 'database': Rekinodb.__name__}
-    return render(request, 'ver_bd.html', context)
-
-
-def resultado_chanchito(request):
-
-    resultado = Chanchitodb.objects.all
-    context = {'RESULTADO': resultado, 'database': Chanchitodb.__name__}
-    return render(request, 'ver_bd.html', context)
-
-
-def resultado_combo(request):
-
-    resultado = Combodb.objects.all
-    context = {'RESULTADO': resultado, 'database': Combodb.__name__}
-    return render(request, 'ver_bd.html', context)
-
-
-def resultado_chao1(request):
-
-    resultado = Chao1db.objects.all
-    context = {'RESULTADO': resultado, 'database': Chao1db.__name__}
-    return render(request, 'ver_bd.html', context)
-
-
-def resultado_chao2(request):
-
-    resultado = Chao2db.objects.all
-    context = {'RESULTADO': resultado, 'database': Chao2db.__name__}
-    return render(request, 'ver_bd.html', context)
-
-
-def resultado_chao3(request):
-
-    resultado = Chao3db.objects.all
-    context = {'RESULTADO': resultado, 'database': Chao3db.__name__}
-    return render(request, 'ver_bd.html', context)
-
 
 def upload_file(request):
     lista_excel = Archivosxl.objects.all
@@ -84,6 +44,7 @@ def upload_file(request):
         file_to_db = Archivosxl.objects.create(file=file)
         return render(request, 'upload.html', {'form': form, 'lista_excel': lista_excel, 'database': Archivosxl.__name__})
     else:
+        #print(request.path)
         form = UploadFileForm()
     return render(request, 'upload.html', {'form': form, 'lista_excel': lista_excel, 'database': Archivosxl.__name__})
 
@@ -111,3 +72,51 @@ def delete_row(request, model_name, pk):
     print("URL: ", model_name.lower()[:-2] + "_index")
     url = model_name.lower()[:-2] + "_index"
     return redirect(url)
+
+def estadisticas(request):
+    path = request.path
+    modelo = find_modelo(str(path))
+
+    #Resultados Todos
+    labels = []
+    cantidades = [] 
+    resultado_todos = modelo.objects.values_list("number1","number2","number3","number4","number5","number6","number7","number8","number9","number10","number11","number12","number13","number14")
+    lista = list(resultado_todos)
+    
+    flat_list = []
+    for row in lista:
+        flat_list.extend(row)
+    for i in range(1,26):
+        labels.append(i)
+        cantidades.append(flat_list.count(i))
+    context = {'labels': labels, 'data': cantidades}
+    #print(cantidades) 
+    #Resultados por posicion
+    
+    for i in range(1,15):
+        number = "number" + str(i)
+        resultado_i = list(modelo.objects.values_list(number,flat= True))     
+        #print(resultado_i) 
+        str_data_i = "data" + str(i)
+        lista_cantidades_i = []
+        for n in range(1,26):            
+            lista_cantidades_i.append(resultado_i.count(n))
+            
+        context[str_data_i]=lista_cantidades_i
+
+
+
+
+    #Resultados de conjuntos
+    
+    return render(request, 'estadisticas.html', context)
+
+
+def find_modelo(path):
+    lista_path_modelos = [["/estadisticas-kino/",Kinodb],["/estadisticas-rekino/",Rekinodb],["/estadisticas-chanchito/",Chanchitodb],
+                          ["/estadisticas-combo/",Combodb],["/estadisticas-chao1/",Chao1db],["/estadisticas-chao2/",Chao2db],["/estadisticas-chao3/",Chao3db],
+                          ["/kino/",Kinodb],["/rekino/",Rekinodb],["/chanchito/",Chanchitodb],["/combo/",Combodb],["/chao1/",Chao1db], ["/chao2/",Chao2db],["/chao3/",Chao3db]                   
+                          ]
+    for elemento in lista_path_modelos:
+        if path in elemento[0]:
+            return elemento[1]

@@ -22,7 +22,7 @@ class Kinodb(models.Model):
     tipo_ingreso = models.CharField(default=" ", max_length=10)
 
     def __str__(self):
-        return f"KINODB ID: {self.id_sorteo} FECHA: {self.fecha} NUMEROS: {self.number1} {self.number2} {self.number3} {self.number4} {self.number5} {self.number6} {self.number7} {self.number8} {self.number9} {self.number10} {self.number11} {self.number12} {self.number13} {self.number14} GANADOR {self.num_ganadores}"
+        return f"Kino"
 
 
 class Rekinodb(models.Model):
@@ -46,7 +46,7 @@ class Rekinodb(models.Model):
     tipo_ingreso = models.CharField(default=" ", max_length=10)
 
     def __str__(self):
-        return f"REKINODB ID: {self.id_sorteo} FECHA: {self.fecha} NUMEROS: {self.number1} {self.number2} {self.number3} {self.number4} {self.number5} {self.number6} {self.number7} {self.number8} {self.number9} {self.number10} {self.number11} {self.number12} {self.number13} {self.number14} GANADOR {self.num_ganadores}"
+        return f"Rekino"
 
 
 class Chanchitodb(models.Model):
@@ -70,7 +70,7 @@ class Chanchitodb(models.Model):
     tipo_ingreso = models.CharField(default=" ", max_length=10)
 
     def __str__(self):
-        return f"CHANCHITODB ID: {self.id_sorteo} FECHA: {self.fecha} NUMEROS: {self.number1} {self.number2} {self.number3} {self.number4} {self.number5} {self.number6} {self.number7} {self.number8} {self.number9} {self.number10} {self.number11} {self.number12} {self.number13} {self.number14} GANADOR {self.num_ganadores}"
+        return f"Chanchito"
 
 
 class Combodb(models.Model):
@@ -94,7 +94,7 @@ class Combodb(models.Model):
     tipo_ingreso = models.CharField(default=" ", max_length=10)
 
     def __str__(self):
-        return f"COMBODB ID: {self.id_sorteo} FECHA: {self.fecha} NUMEROS: {self.number1} {self.number2} {self.number3} {self.number4} {self.number5} {self.number6} {self.number7} {self.number8} {self.number9} {self.number10} {self.number11} {self.number12} {self.number13} {self.number14} GANADOR {self.num_ganadores}"
+        return f"Combo"
 
 
 class Chao1db(models.Model):
@@ -118,7 +118,7 @@ class Chao1db(models.Model):
     tipo_ingreso = models.CharField(default=" ", max_length=10)
 
     def __str__(self):
-        return f"CHAO1DB ID: {self.id_sorteo} FECHA: {self.fecha} NUMEROS: {self.number1} {self.number2} {self.number3} {self.number4} {self.number5} {self.number6} {self.number7} {self.number8} {self.number9} {self.number10} {self.number11} {self.number12} {self.number13} {self.number14} GANADOR {self.num_ganadores}"
+        return f"Chao Jefe 1"
 
 
 class Chao2db(models.Model):
@@ -142,7 +142,7 @@ class Chao2db(models.Model):
     tipo_ingreso = models.CharField(default=" ", max_length=10)
 
     def __str__(self):
-        return f"CHAO2DB ID: {self.id_sorteo} FECHA: {self.fecha} NUMEROS: {self.number1} {self.number2} {self.number3} {self.number4} {self.number5} {self.number6} {self.number7} {self.number8} {self.number9} {self.number10} {self.number11} {self.number12} {self.number13} {self.number14} GANADOR {self.num_ganadores}"
+        return f"Chao Jefe 2"
 
 
 class Chao3db(models.Model):
@@ -166,7 +166,7 @@ class Chao3db(models.Model):
     tipo_ingreso = models.CharField(default=" ", max_length=10)
 
     def __str__(self):
-        return f"CHAO3DB ID: {self.id_sorteo} FECHA: {self.fecha} NUMEROS: {self.number1} {self.number2} {self.number3} {self.number4} {self.number5} {self.number6} {self.number7} {self.number8} {self.number9} {self.number10} {self.number11} {self.number12} {self.number13} {self.number14} GANADORES: {self.num_ganadores}"
+        return f"Chao Jefe 3"
 
 
 class Archivosxl(models.Model):

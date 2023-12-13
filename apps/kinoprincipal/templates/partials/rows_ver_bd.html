@@ -43,5 +43,19 @@
   </td>
   <td style="padding: 0; margin: 0">
     <span class="badge rounded-pill bg-primary"> {{p.number14}} </span>
-  </td>  
+  </td>
+  <td style="padding: 0; margin: 0">
+    <span class="badge rounded-pill bg-primary"> {{p.num_ganadores}} </span>
+  </td>
+  <td style="padding: 0; margin: 0">
+    <span class="badge rounded-pill bg-primary"> {{p.tipo_ingreso}} </span>
+  </td>
+  <td style="padding: 0; margin: 0">
+    <a style="text-decoration:none" href="{% url 'delete-row' database p.pk %}">
+      <button class="btn btn-danger">
+        Delete row
+      </button>
+    </a>
+    
+  </td> 
 </tr>

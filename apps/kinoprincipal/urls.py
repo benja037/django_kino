@@ -5,14 +5,21 @@ from .models import Kinodb, Rekinodb, Chanchitodb, Combodb, Chao1db, Chao2db, Ch
 
 urlpatterns = [
     path('', views.index, name='index'),  # Aca despues el menú
-    path('kino/', views.resultado_kino, name='kino_index'),
-    path('rekino/', views.resultado_rekino, name='rekino_index'),
-    path('chanchito/', views.resultado_chanchito, name='chanchito_index'),
-    path('combo/', views.resultado_combo, name='combo_index'),
-    path('chao1/', views.resultado_chao1, name='chao1_index'),
-    path('chao2/', views.resultado_chao2, name='chao2_index'),
-    path('chao3/', views.resultado_chao3, name='chao3_index'),
+    path('kino/', views.resultados, name='kino_index'),
+    path('rekino/', views.resultados, name='rekino_index'),
+    path('chanchito/', views.resultados, name='chanchito_index'),
+    path('combo/', views.resultados, name='combo_index'),
+    path('chao1/', views.resultados, name='chao1_index'),
+    path('chao2/', views.resultados, name='chao2_index'),
+    path('chao3/', views.resultados, name='chao3_index'),
     path('archivos/', views.upload_file, name='archivos_index'),
+    path('estadisticas-kino/', views.estadisticas, name='estadisticas_kino_index'),
+    path('estadisticas-rekino/', views.estadisticas, name='estadisticas_rekino_index'),
+    path('estadisticas-chanchito/', views.estadisticas, name='estadisticas_chanchito_index'),
+    path('estadisticas-combo/', views.estadisticas, name='estadisticas_combo_index'),
+    path('estadisticas-chao1/', views.estadisticas, name='estadisticas_chao1_index'),
+    path('estadisticas-chao2/', views.estadisticas, name='estadisticas_chao2_index'),
+    path('estadisticas-chao3/', views.estadisticas, name='estadisticas_chao3_index'),
 
 
     #Url de botones

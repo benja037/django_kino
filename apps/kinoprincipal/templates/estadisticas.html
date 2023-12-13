@@ -1,0 +1,375 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Ultimos Resultados Kino</h1>
+<div>
+    <canvas id="myChart"></canvas>
+</div>
+<div>
+    <canvas id="myChart1"></canvas>
+</div>
+<div>
+  <canvas id="myChart2"></canvas>
+</div>
+<div>
+  <canvas id="myChart3"></canvas>
+</div>
+<div>
+  <canvas id="myChart4"></canvas>
+</div>
+<div>
+  <canvas id="myChart5"></canvas>
+</div>
+<div>
+  <canvas id="myChart6"></canvas>
+</div>
+<div>
+  <canvas id="myChart7"></canvas>
+</div>
+<div>
+  <canvas id="myChart8"></canvas>
+</div>
+<div>
+  <canvas id="myChart9"></canvas>
+</div>
+<div>
+  <canvas id="myChart10"></canvas>
+</div>
+<div>
+  <canvas id="myChart11"></canvas>
+</div>
+<div>
+  <canvas id="myChart12"></canvas>
+</div>
+<div>
+  <canvas id="myChart13"></canvas>
+</div>
+<div>
+  <canvas id="myChart14"></canvas>
+</div>
+    
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    const ctx = document.getElementById('myChart');
+    let labels = {{labels|safe}};
+    let data = {{data|safe}};
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de apariciones',
+          data: data,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    const ctx1 = document.getElementById('myChart1');
+    let data1 = {{data1|safe}};
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de apariciones',
+          data: data1,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const ctx2 = document.getElementById('myChart2');
+    let data2 = {{data2|safe}};
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de apariciones',
+          data: data2,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const ctx3 = document.getElementById('myChart3');
+    let data3 = {{data3|safe}};
+    new Chart(ctx3, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de apariciones',
+          data: data3,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    const ctx4 = document.getElementById('myChart4');
+    let data4 = {{data4|safe}};
+    new Chart(ctx4, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de apariciones',
+          data: data4,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const ctx5 = document.getElementById('myChart5');
+    let data5 = {{data5|safe}};
+    new Chart(ctx5, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de apariciones',
+          data: data5,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const ctx6 = document.getElementById('myChart6');
+    let data6 = {{data6|safe}};
+    new Chart(ctx6, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de apariciones',
+          data: data6,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const ctx7 = document.getElementById('myChart7');
+    let data7 = {{data7|safe}};
+    new Chart(ctx7, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de apariciones',
+          data: data7,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const ctx8 = document.getElementById('myChart8');
+    let data8 = {{data8|safe}};
+    new Chart(ctx8, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de apariciones',
+          data: data8,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const ctx9 = document.getElementById('myChart9');
+    let data9 = {{data9|safe}};
+    new Chart(ctx9, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de apariciones',
+          data: data9,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const ctx10 = document.getElementById('myChart10');
+    let data10 = {{data10|safe}};
+    new Chart(ctx10, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de apariciones',
+          data: data10,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const ctx11 = document.getElementById('myChart11');
+    let data11 = {{data11|safe}};
+    new Chart(ctx11, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de apariciones',
+          data: data11,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const ctx12 = document.getElementById('myChart12');
+    let data12 = {{data12|safe}};
+    new Chart(ctx12, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de apariciones',
+          data: data12,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const ctx13 = document.getElementById('myChart13');
+    let data13 = {{data13|safe}};
+    new Chart(ctx13, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de apariciones',
+          data: data13,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const ctx14 = document.getElementById('myChart14');
+    let data14 = {{data14|safe}};
+    new Chart(ctx14, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de apariciones',
+          data: data14,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+              
+    
+  </script>
+{% endblock %}
