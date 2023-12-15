@@ -81,6 +81,9 @@ def estadisticas(request):
     labels = []
     cantidades = [] 
     resultado_todos = modelo.objects.values_list("number1","number2","number3","number4","number5","number6","number7","number8","number9","number10","number11","number12","number13","number14")
+    lista_duplicados = []
+    num_rep_duplicados = []
+    lista_elementos_unicos = [] #Es decir que aunque este duplicado en esta lista solo saldra una vez
     lista = list(resultado_todos)
     
     flat_list = []
@@ -108,7 +111,32 @@ def estadisticas(request):
 
 
     #Resultados de conjuntos
-    
+    #Mostrar probabilidad de ganar el sorteo (grafico podria ser)
+    #Probabilidad de ganar el sorte es 1 / comibinatoria de 25 sobre 14 = 1/4457400
+    #Pasar directo al html
+    #Crear tabla de los conjuntos que más salieron ganadores, seria mas facil con pandas y mas rapido que este for
+    for i in lista:
+        if i not in lista_elementos_unicos:
+            lista_elementos_unicos.append(i)
+        else:            
+            if i in lista_duplicados:
+                i_index = lista_duplicados.index(i)
+                
+                aux_num_dupl = num_rep_duplicados[i_index]
+                num_rep_duplicados[i_index] = aux_num_dupl + 1
+
+                i_index = lista_duplicados.index(i)
+
+                
+            else:
+                lista_duplicados.append(i)
+                num_rep_duplicados.append(2)
+    print(lista_duplicados)
+    print(num_rep_duplicados)
+    #Mostrar grafico que separe en dos (conjuntos que salieron al menos una vez, conjuntos que nunca salieron)
+    #print(lista_duplicados)
+    model_exactos = Combodb.objects.filter(number1 =2,number2=4,number3=5,number4=7,number5=8,number6=12,number7=13,number8=14,number9=16,number10=17,number11=18,number12=19,number13=23,number14=24)
+    print(list(model_exactos.values()))#Funciona pero sujeto a los cambios en la base de datos que no son del kino propiamente
     return render(request, 'estadisticas.html', context)
 
 

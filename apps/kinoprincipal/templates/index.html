@@ -1,4 +1,90 @@
 {% extends 'base.html' %} {% block content %}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless fs-6 text-center">
+          <tbody>
+            <tr>
+              <td style="padding: 0; margin: 0">
+                <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+                  <div class="card-header"><h3>Kino</h3></div>
+                  <div class="card-body">
+                    <h5 class="card-title">Ver y editar nuestra base de datos</h5>
+                    <a href="{% url 'kino_index' %}" class="btn btn-light stretched-link">Ir</a>
+                  </div>
+                </div>
+              </td>
+              <td style="padding: 0; margin: 0">
+                <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+                  <div class="card-header"><h3>Rekino</h3></div>
+                  <div class="card-body">
+                    <h5 class="card-title">Ver y editar nuestra base de datos</h5>
+                    <a href="{% url 'rekino_index' %}" class="btn btn-light stretched-link">Ir</a>
+                  </div>
+                </div>
+              </td>
+              <td style="padding: 0; margin: 0">
+                <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+                  <div class="card-header"><h3>Chanchito Regalón</h3></div>
+                  <div class="card-body">
+                    <h5 class="card-title">Ver y editar nuestra base de datos</h5>
+                    <a href="{% url 'chanchito_index' %}" class="btn btn-light stretched-link">Ir</a>
+                  </div>
+                </div>
+              </td>
+              <td style="padding: 0; margin: 0">
+                <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+                  <div class="card-header"><h3>Combo Marraqueta</h3></div>
+                  <div class="card-body">
+                    <h5 class="card-title">Ver y editar nuestra base de datos</h5>
+                    <a href="{% url 'combo_index' %}" class="btn btn-light stretched-link">Ir</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0; margin: 0">
+                <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+                  <div class="card-header"><h3>Chao Jefe 1</h3></div>
+                  <div class="card-body">
+                    <h5 class="card-title">Ver y editar nuestra base de datos</h5>
+                    <a href="{% url 'chao1_index' %}" class="btn btn-light stretched-link">Ir</a>
+                  </div>
+                </div>
+              </td>
+              <td style="padding: 0; margin: 0">
+                <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+                  <div class="card-header"><h3>Chao Jefe 2</h3></div>
+                  <div class="card-body">
+                    <h5 class="card-title">Ver y editar nuestra base de datos</h5>
+                    <a href="{% url 'chao2_index' %}" class="btn btn-light stretched-link">Ir</a>
+                  </div>
+                </div>
+              </td>
+              <td style="padding: 0; margin: 0">
+                <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+                  <div class="card-header"><h3>Chao Jefe 3</h3></div>
+                  <div class="card-body">
+                    <h5 class="card-title">Ver y editar nuestra base de datos</h5>
+                    <a href="{% url 'chao3_index' %}" class="btn btn-light stretched-link">Ir</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <h1>Ultimos Resultados Kino</h1>
 <div class="container">
   <div class="row">
@@ -110,4 +196,9 @@
     </div>
   </div>
 </div>
+
+
 {% endblock %}
+
+  
+
