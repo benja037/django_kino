@@ -1,0 +1,184 @@
+{% extends 'base.html' %} {% block content %}
+<div class="row">
+    <div class="col-12">
+        <form method="get">
+        <div>
+            <label for="">Value1</label>
+            <input type="text" name="num1" class="form-control"/>
+        </div>
+        <div>
+            <label for="">Value2</label>
+            <input type="text" name="num2" class="form-control"/>
+        </div>
+        <div>
+            <label for="">Value3</label>
+            <input type="text" name="num3" class="form-control"/>
+        </div>
+        <div>
+            <label for="">Value4</label>
+            <input type="text" name="num4" class="form-control"/>
+        </div>
+        <div>
+            <label for="">Value5</label>
+            <input type="text" name="num5" class="form-control"/>
+        </div>
+        <div>
+            <label for="">Value6</label>
+            <input type="text" name="num6" class="form-control"/>
+        </div>
+        <div>
+            <label for="">Value7</label>
+            <input type="text" name="num7" class="form-control"/>
+        </div>
+        <div>
+            <label for="">Value8</label>
+            <input type="text" name="num8" class="form-control"/>
+        </div>
+        <div>
+            <label for="">Value9</label>
+            <input type="text" name="num9" class="form-control"/>
+        </div>
+        <div>
+            <label for="">Value10</label>
+            <input type="text" name="num10" class="form-control"/>
+        </div>
+        <div>
+            <label for="">Value11</label>
+            <input type="text" name="num11" class="form-control"/>
+        </div>
+        <div>
+            <label for="">Value12</label>
+            <input type="text" name="num12" class="form-control"/>
+        </div>
+        <div>
+            <label for="">Value13</label>
+            <input type="text" name="num13" class="form-control"/>
+        </div>
+        <div>
+            <label for="">Value14</label>
+            <input type="text" name="num14" class="form-control"/>
+        </div>
+        <div class="pt-4">
+            <button type="submit">Save</button>
+        </div>
+        </form>
+    </div>
+</div>
+<h1> aaa</h1>
+
+<h1>Coincidencias para Kino</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless fs-6 text-center">
+          <tbody>
+            {% for p in coincidencias_kino %} {% include 'partials/rows.html' %}
+            {%endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1>Coincidencias para rekino</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless fs-6 text-center">
+          <tbody>
+            {% for p in coincidencias_rekino %} {% include 'partials/rows.html' %}
+            {%endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1>Coincidencias para Chanchito</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless fs-6 text-center">
+          <tbody>
+            {% for p in coincidencias_chanchito %} {% include 'partials/rows.html' %}
+            {%endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1>Coincidencias para Combo</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless fs-6 text-center">
+          <tbody>
+            {% for p in coincidencias_combo %} {% include 'partials/rows.html' %}
+            {%endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1>Coincidencias para Chao1</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless fs-6 text-center">
+          <tbody>
+            {% for p in coincidencias_chao1 %} {% include 'partials/rows.html' %}
+            {%endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h1>Coincidencias para Chao2</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless fs-6 text-center">
+          <tbody>
+            {% for p in coincidencias_chao2 %} {% include 'partials/rows.html' %}
+            {%endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h1>Coincidencias para Chao3</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless fs-6 text-center">
+          <tbody>
+            {% for p in coincidencias_chao3 %} {% include 'partials/rows.html' %}
+            {%endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock%}
