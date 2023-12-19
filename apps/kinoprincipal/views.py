@@ -143,89 +143,32 @@ def estadisticas(request):
 
 
 def mostrar_coincidencias(request):    
-    coincidencias_kino = []
-    coincidencias_rekino = []
-    coincidencias_chanchito  = []
-    coincidencias_combo = []
-    coincidencias_chao1 = []
-    coincidencias_chao2 = []
-    coincidencias_chao3 = []
+    context = {}
     try:
-        number1 =int(request.GET.get('num1'))
-        number2 =int(request.GET.get('num2'))
-        number3 =int(request.GET.get('num3'))
-        number4 =int(request.GET.get('num4'))
-        number5 =int(request.GET.get('num5'))
-        number6 =int(request.GET.get('num6'))
-        number7 =int(request.GET.get('num7'))
-        number8 =int(request.GET.get('num8'))
-        number9 =int(request.GET.get('num9'))
-        number10 =int(request.GET.get('num10'))
-        number11 =int(request.GET.get('num11'))
-        number12 =int(request.GET.get('num12'))
-        number13 =int(request.GET.get('num13'))
-        number14 =int(request.GET.get('num14'))
-        print(type(number1),"number1")
-        if number1 != None:
-            try:
-                print("aaaa")
-                print(number1,number2,number4,number5,number6,number7,number8,number9,number10,number11,number12,number13,number14)
-                model_exactos_kino = Kinodb.objects.filter(number1 =number1,number2=number2,number3=number3,number4=number4,number5=number5,number6=number6,number7=number7,number8=number8,number9=number9,number10=number10,number11=number11,number12=number12,number13=number13,number14=number14)
-                coincidencias_kino = list(model_exactos_kino.values())
-                print("a2")
-            except:
-                pass
-            try:
+        models = {model  for model in apps.get_models() if model.__module__ == 'apps.kinoprincipal.models' and model.__name__ != 'Archivosxl'}
+        print(models)
+        number = []
+        for i in range(1,15):
+            num_get = "num" + str(i)
+            number.append(int(request.GET.get(num_get))) 
 
-                model_exactos_rekino = Rekinodb.objects.all.filter(number1 =number1,number2=number2,number3=number3,number4=number4,number5=number5,number6=number6,number7=number7,number8=number8,number9=number9,number10=number10,number11=number11,number12=number12,number13=number13,number14=number14)
-                coincidencias_rekino = list(model_exactos_rekino.values())
-                print("a3")
-            except:
-                pass
-            try:
-                model_exactos_chanchito = Chanchitodb.objects.filter(number1 =number1,number2=number2,number3=number3,number4=number4,number5=number5,number6=number6,number7=number7,number8=number8,number9=number9,number10=number10,number11=number11,number12=number12,number13=number13,number14=number14)
-                coincidencias_chanchito = list(model_exactos_chanchito.values())
-                print("a4")
-            except:
-                pass
-            try:
-                model_exactos_combo = Combodb.objects.filter(number1 =number1,number2=number2,number3=number3,number4=number4,number5=number5,number6=number6,number7=number7,number8=number8,number9=number9,number10=number10,number11=number11,number12=number12,number13=number13,number14=number14)
-                coincidencias_combo = list(model_exactos_combo.values())
-                print("a5")
-            except:
-                pass
-            try:
-                model_exactos_chao1 = Chao1db.objects.filter(number1 =number1,number2=number2,number3=number3,number4=number4,number5=number5,number6=number6,number7=number7,number8=number8,number9=number9,number10=number10,number11=number11,number12=number12,number13=number13,number14=number14)
-                coincidencias_chao1 = list(model_exactos_chao1.values())
-                print("a6")
-            except:
-                pass
-            try:
-                model_exactos_chao2 = Chao2db.objects.filter(number1 =number1,number2=number2,number3=number3,number4=number4,number5=number5,number6=number6,number7=number7,number8=number8,number9=number9,number10=number10,number11=number11,number12=number12,number13=number13,number14=number14)
-                coincidencias_chao2 = list(model_exactos_chao2.values())
-                print("a7")
-            except:
-                pass
-            try:
-                model_exactos_chao3 = Chao3db.objects.filter(number1 =number1,number2=number2,number3=number3,number4=number4,number5=number5,number6=number6,number7=number7,number8=number8,number9=number9,number10=number10,number11=number11,number12=number12,number13=number13,number14=number14)
-                coincidencias_chao3 = list(model_exactos_chao3.values())
-                print("a8")
-            except:
-                pass
-           
-                
-            print("eeee",coincidencias_kino)
-            
-
-
-            print("sss",coincidencias_kino)
-            print("context",{'coincidencias_kino':coincidencias_kino,'coincidencias_rekino':coincidencias_rekino,'coincidencias_chanchito':coincidencias_chanchito,'coincidencias_combo':coincidencias_combo,'coincidencias_chao1':coincidencias_chao1,'coincidencias_chao2':coincidencias_chao2,'coincidencias_chao3':coincidencias_chao3})
-            return render(request, 'coincidencias.html',{'coincidencias_kino':coincidencias_kino,'coincidencias_rekino':coincidencias_rekino,'coincidencias_chanchito':coincidencias_chanchito,'coincidencias_combo':coincidencias_combo,'coincidencias_chao1':coincidencias_chao1,'coincidencias_chao2':coincidencias_chao2,'coincidencias_chao3':coincidencias_chao3})
+        context["lista_numeros_get"] = number      
+        print(context["lista_numeros_get"][0] )
+        for model in models:
+            print(model)
+            model_exactos = model.objects.filter(number1 =number[0],number2=number[1],number3=number[2],number4=number[3],number5=number[4],number6=number[5],number7=number[6],number8=number[7],number9=number[8],number10=number[9],number11=number[10],number12=number[11],number13=number[12],number14=number[13])
+            coincidencias = list(model_exactos.values())
+            context["coincidencias_"+model.__name__] = coincidencias  
+        
+  
+        #print("context",{'coincidencias_kino':coincidencias_kino,'coincidencias_rekino':coincidencias_rekino,'coincidencias_chanchito':coincidencias_chanchito,'coincidencias_combo':coincidencias_combo,'coincidencias_chao1':coincidencias_chao1,'coincidencias_chao2':coincidencias_chao2,'coincidencias_chao3':coincidencias_chao3})
+        print("context",context)
+        return render(request, 'coincidencias.html',context)
 
     except:
         pass
 
-    return render(request, 'coincidencias.html')
+    return render(request, 'coincidencias.html',context)
 
 def find_modelo(path):
     lista_path_modelos = [["/estadisticas-kino/",Kinodb],["/estadisticas-rekino/",Rekinodb],["/estadisticas-chanchito/",Chanchitodb],
