@@ -1,55 +1,270 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Ultimos Resultados Kino</h1>
-<div>
-    <canvas id="myChart"></canvas>
+<div class="container">
+  <div class="row justify-content-center">
+      <h1> Estadísticas de {{modelo}} </h1>
+  </div>
 </div>
-<div>
-    <canvas id="myChart1"></canvas>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3> Que probabilidad existe de ganar en {{modelo}}?</h3>
+      <p>
+        La probabilidad de ganar es de 1 entre 4.457.400 de opciones, lo que es igual a un 0,0000224%
+      </p>
+    </div>
+  </div>
 </div>
-<div>
-  <canvas id="myChart2"></canvas>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive-lg">
+        <table class="table table-borderless fs-1 text-center">
+          <tbody>              
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart"></canvas>
+              </td>                  
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
-<div>
-  <canvas id="myChart3"></canvas>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive-lg">
+        <table class="table table-borderless fs-1 text-center">
+          <tbody> 
+            <tr>
+              <th style="width:50%">Porcentaje de apariciones</th>
+              <th style="width:50%">Combinaciones con más de una aparición</th>              
+            </tr>  
+            <tr>           
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart_pie"></canvas>
+              </td> 
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart_conjunto"></canvas>  
+              </td>  
+            </tr>  
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
-<div>
-  <canvas id="myChart4"></canvas>
-</div>
-<div>
-  <canvas id="myChart5"></canvas>
-</div>
-<div>
-  <canvas id="myChart6"></canvas>
-</div>
-<div>
-  <canvas id="myChart7"></canvas>
-</div>
-<div>
-  <canvas id="myChart8"></canvas>
-</div>
-<div>
-  <canvas id="myChart9"></canvas>
-</div>
-<div>
-  <canvas id="myChart10"></canvas>
-</div>
-<div>
-  <canvas id="myChart11"></canvas>
-</div>
-<div>
-  <canvas id="myChart12"></canvas>
-</div>
-<div>
-  <canvas id="myChart13"></canvas>
-</div>
-<div>
-  <canvas id="myChart14"></canvas>
-</div>
+
+
+
+
+    
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive-lg">
+        <table class="table table-borderless fs-1 text-center">
+          <tbody>
+            <tr>
+              <th style="width:33%">Números en la posición 1</th>
+              <th style="width:33%">Números en la posición 2</th>
+              <th style="width:33%">Números en la posición 3</th>
+            </tr>
+            <tr>  
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart1"></canvas>
+              </td> 
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart2"></canvas>
+              </td>  
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart3"></canvas>
+              </td>  
+            
+            </tr>            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>           
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive-lg">
+        <table class="table table-borderless fs-1 text-center">
+          <tbody>
+            <tr>
+              <th style="width:33%">Números en la posición 4</th>
+              <th style="width:33%">Números en la posición 5</th>
+              <th style="width:33%">Números en la posición 6</th>
+            </tr>
+            <tr>  
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart4"></canvas>
+              </td> 
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart5"></canvas>
+              </td>  
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart6"></canvas>
+              </td>  
+            
+            </tr>            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>      
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive-lg">
+        <table class="table table-borderless fs-1 text-center">
+          <tbody>
+            <tr>
+              <th style="width:33%">Números en la posición 7</th>
+              <th style="width:33%">Números en la posición 8</th>
+              <th style="width:33%">Números en la posición 9</th>
+            </tr>
+            <tr>  
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart7"></canvas>
+              </td> 
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart8"></canvas>
+              </td>  
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart9"></canvas>
+              </td>  
+            
+            </tr>            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>  
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive-lg">
+        <table class="table table-borderless fs-1 text-center">
+          <tbody>
+            <tr>
+              <th style="width:33%">Números en la posición 10</th>
+              <th style="width:33%">Números en la posición 11</th>
+              <th style="width:33%">Números en la posición 12</th>
+            </tr>
+            <tr>  
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart10"></canvas>
+              </td> 
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart11"></canvas>
+              </td>  
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart12"></canvas>
+              </td>  
+            
+            </tr>            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>        
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive-lg">
+        <table class="table table-borderless fs-1 text-center">
+          <tbody>
+            <tr>
+              <th style="width:33%">Números en la posición 13</th>
+              <th style="width:33%">Números en la posición 14</th>
+              <th style="width:33%"></th>
+            </tr>
+            <tr>  
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart13"></canvas>
+              </td> 
+              <td style="padding: 0; margin: 0">
+                <canvas id="myChart14"></canvas>
+              </td>  
+              <td style="padding: 0; margin: 0">  
+              </td>  
+            
+            </tr>            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>        
+
+
     
   
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
   <script>
+    const ctx_pie = document.getElementById('myChart_pie');
+    let labels_PIE = {{elementos_duplicados|safe}};
+    let data_pie = {{cantidad_elementos_duplicados|safe}};
+    new Chart(ctx_pie, {
+      type: 'pie',
+      data: {
+        labels: [
+          'Combinaciones que ya aparecieron',
+          'Combinaciones que no han aparecido',          
+          ], 
+        datasets: [{
+          labels: 'My First Dataset',
+          data: {{data_pie}},
+          backgroundColor: [            
+            'rgb(54, 162, 235)',
+            'rgb(255, 205, 86)'
+          ],
+          hoverOffset: 4
+        }]
+        
+      }
+      
+    });
+
+
+    const ctx_conjunto = document.getElementById('myChart_conjunto');
+    let labels_conjunto = {{elementos_duplicados|safe}};
+    let data_conjunto = {{cantidad_elementos_duplicados|safe}};
+    new Chart(ctx_conjunto, {
+      type: 'bar',
+      data: {
+        labels: labels_conjunto,
+        datasets: [{
+          label: '# de apariciones',
+          data: data_conjunto,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+
     const ctx = document.getElementById('myChart');
     let labels = {{labels|safe}};
     let data = {{data|safe}};

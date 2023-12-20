@@ -31,8 +31,9 @@ def index(request):
 def resultados(request):
     path = request.path
     modelo = find_modelo(path)
-    resultado = modelo.objects.all
-    context = {'RESULTADO': resultado, 'database': modelo}
+    resultado = modelo.objects.all()
+    len_resultado = len(list(resultado))
+    context = {'RESULTADO': resultado,'database_title':modelo, 'database': modelo.__name__,'len_resultado':len_resultado}
     return render(request, 'ver_bd.html', context)
 
 def upload_file(request):
@@ -67,19 +68,21 @@ def agregar_a_db(request, pk):
 
 
 def delete_row(request, model_name, pk):
-    row = get_object_or_404(apps.get_model('kinoprincipal', model_name), pk=pk)
+    row = get_object_or_404(apps.get_model('kinoprincipal', model_name +""), pk=pk)
     row.delete()
     print("URL: ", model_name.lower()[:-2] + "_index")
     url = model_name.lower()[:-2] + "_index"
     return redirect(url)
 
+
 def estadisticas(request):
     path = request.path
     modelo = find_modelo(str(path))
-
+    
     #Resultados Todos
     labels = []
     cantidades = [] 
+    #Esta funcion muestra solo los elementos y columnas solicitados
     resultado_todos = modelo.objects.values_list("number1","number2","number3","number4","number5","number6","number7","number8","number9","number10","number11","number12","number13","number14")
     lista_duplicados = []
     num_rep_duplicados = []
@@ -93,7 +96,8 @@ def estadisticas(request):
         labels.append(i)
         cantidades.append(flat_list.count(i))
     context = {'labels': labels, 'data': cantidades}
-    #print(cantidades) 
+    context["modelo"] = modelo
+    #print("DDDDD",flat_list) 
     #Resultados por posicion
     
     for i in range(1,15):
@@ -131,12 +135,23 @@ def estadisticas(request):
             else:
                 lista_duplicados.append(i)
                 num_rep_duplicados.append(2)
+    print(len(lista_elementos_unicos))
     print(lista_duplicados)
     print(num_rep_duplicados)
+    lista_duplicados_str = []
+    for elemento in lista_duplicados:
+        lista_duplicados_str.append(str(elemento))
+    context["elementos_duplicados"] = lista_duplicados_str
+    context["cantidad_elementos_duplicados"] = num_rep_duplicados
+    
     #Mostrar grafico que separe en dos (conjuntos que salieron al menos una vez, conjuntos que nunca salieron)
+    cant_elementos_aparecidos = len(lista_elementos_unicos)
+    cant_no_aparecidos = 4457400 - cant_elementos_aparecidos
+    
+    context["data_pie"] = [cant_elementos_aparecidos,cant_no_aparecidos]
     #print(lista_duplicados)
-    model_exactos = Combodb.objects.filter(number1 =2,number2=4,number3=5,number4=7,number5=8,number6=12,number7=13,number8=14,number9=16,number10=17,number11=18,number12=19,number13=23,number14=24)
-    print(list(model_exactos.values()))#Funciona pero sujeto a los cambios en la base de datos que no son del kino propiamente
+    #model_exactos = Combodb.objects.filter(number1 =2,number2=4,number3=5,number4=7,number5=8,number6=12,number7=13,number8=14,number9=16,number10=17,number11=18,number12=19,number13=23,number14=24)
+    #print(list(model_exactos.values()))#Funciona pero sujeto a los cambios en la base de datos que no son del kino propiamente
     return render(request, 'estadisticas.html', context)
 
 
