@@ -8,4 +8,4 @@ services:
             - .:/usr/src/
         env_file: .env
         ports:
-            - 8000:8000
+            - 443:443
