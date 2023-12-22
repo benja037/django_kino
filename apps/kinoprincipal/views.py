@@ -36,6 +36,14 @@ def resultados(request):
     context = {'RESULTADO': resultado,'database_title':modelo, 'database': modelo.__name__,'len_resultado':len_resultado}
     return render(request, 'ver_bd.html', context)
 
+def resultados_admin(request):
+    path = request.path
+    modelo = find_modelo(path)
+    resultado = modelo.objects.all()
+    len_resultado = len(list(resultado))
+    context = {'RESULTADO': resultado,'database_title':modelo, 'database': modelo.__name__,'len_resultado':len_resultado}
+    return render(request, 'ver_bd_admin.html', context)
+
 def upload_file(request):
     lista_excel = Archivosxl.objects.all
     if request.method == 'POST':
