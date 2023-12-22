@@ -47,7 +47,7 @@ def resultados_admin(request):
 def upload_file(request):
     lista_excel = Archivosxl.objects.all
     if request.method == 'POST':
-        print('request', request)
+        #print('request', request)
         form = UploadFileForm(request.POST, request.FILES)
         file = request.FILES['file']
         file_to_db = Archivosxl.objects.create(file=file)
@@ -78,7 +78,7 @@ def agregar_a_db(request, pk):
 def delete_row(request, model_name, pk):
     row = get_object_or_404(apps.get_model('kinoprincipal', model_name +""), pk=pk)
     row.delete()
-    print("URL: ", model_name.lower()[:-2] + "_index")
+    #print("URL: ", model_name.lower()[:-2] + "_index")
     url = model_name.lower()[:-2] + "_index"
     return redirect(url)
 
@@ -143,9 +143,9 @@ def estadisticas(request):
             else:
                 lista_duplicados.append(i)
                 num_rep_duplicados.append(2)
-    print(len(lista_elementos_unicos))
-    print(lista_duplicados)
-    print(num_rep_duplicados)
+    #print(len(lista_elementos_unicos))
+    #print(lista_duplicados)
+    #print(num_rep_duplicados)
     lista_duplicados_str = []
     for elemento in lista_duplicados:
         lista_duplicados_str.append(str(elemento))
@@ -169,14 +169,14 @@ def mostrar_coincidencias(request):
     context = {}
     try:
         models = {model  for model in apps.get_models() if model.__module__ == 'apps.kinoprincipal.models' and model.__name__ != 'Archivosxl'}
-        print(models)
+        #print(models)
         number = []
         for i in range(1,15):
             num_get = "num" + str(i)
             number.append(int(request.GET.get(num_get))) 
 
         context["lista_numeros_get"] = number      
-        print(context["lista_numeros_get"][0] )
+        #print(context["lista_numeros_get"][0] )
         for model in models:
             print(model)
             model_exactos = model.objects.filter(number1 =number[0],number2=number[1],number3=number[2],number4=number[3],number5=number[4],number6=number[5],number7=number[6],number8=number[7],number9=number[8],number10=number[9],number11=number[10],number12=number[11],number13=number[12],number14=number[13])
@@ -185,7 +185,7 @@ def mostrar_coincidencias(request):
         
   
         #print("context",{'coincidencias_kino':coincidencias_kino,'coincidencias_rekino':coincidencias_rekino,'coincidencias_chanchito':coincidencias_chanchito,'coincidencias_combo':coincidencias_combo,'coincidencias_chao1':coincidencias_chao1,'coincidencias_chao2':coincidencias_chao2,'coincidencias_chao3':coincidencias_chao3})
-        print("context",context)
+        #print("context",context)
         return render(request, 'coincidencias.html',context)
 
     except:

@@ -9,7 +9,7 @@ def Importar_datos(archivo):
     ws = wb["Kino_Int"]
 
     ultima_fila = ws.max_row - 3
-    print(ultima_fila)
+    #print(ultima_fila)
     # Parametros Kino
     rango_casillas_kino = "C808:P" + str(ultima_fila)
     int_inicio_kino = 808

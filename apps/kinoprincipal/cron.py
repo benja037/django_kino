@@ -5,7 +5,7 @@ import datetime
 
 
 def fetch_kino_results():
-    print("HOLAAA")
+    #print("HOLAAA")
     fecha_hoy = datetime.date.today()
     fecha_ayer = fecha_hoy - datetime.timedelta(days=1)
     resp = requests.get('https://chileresultados.com/kino/ultimosorteo')
