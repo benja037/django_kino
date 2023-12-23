@@ -11,6 +11,8 @@ COPY ./apps ./apps
 COPY ./kinostats ./kinostats
 COPY manage.py .
 COPY ./requirements.txt .
+COPY ./media ./media
+COPY ./static ./static
 
 RUN pip install -r requirements.txt
 
