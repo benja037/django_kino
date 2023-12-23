@@ -95,13 +95,21 @@
                     {% endif %}
                   </td>
                   <td style="padding: 0; margin: 0">
+                    {% if not lista_numeros_get.11 %}
+                    <input type="text" name="num12" class="form-control"/>
+                    {% endif %}
+                    {% if lista_numeros_get.11 %}
+                    <input type="text" name="num12" value = {{lista_numeros_get.11}} class="form-control"/>
+                    {% endif %}
+                  </td>
+                  <td style="padding: 0; margin: 0">
                     {% if not lista_numeros_get.12 %}
                     <input type="text" name="num13" class="form-control"/>
                     {% endif %}
                     {% if lista_numeros_get.12 %}
                     <input type="text" name="num13" value = {{lista_numeros_get.12}} class="form-control"/>
                     {% endif %}
-                  </td>
+                  </td>   
                   <td style="padding: 0; margin: 0">
                     {% if not lista_numeros_get.13 %}
                     <input type="text" name="num14" class="form-control"/>
@@ -119,8 +127,6 @@
       </form>
     </div>
 </div>
-<h1> aaa</h1>
-
 <h1>Coincidencias para Kino</h1>
 <div class="container">
   <div class="row">

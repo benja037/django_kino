@@ -174,9 +174,11 @@ def mostrar_coincidencias(request):
         for i in range(1,15):
             num_get = "num" + str(i)
             number.append(int(request.GET.get(num_get))) 
+            print(int(request.GET.get(num_get)))
 
         context["lista_numeros_get"] = number      
         #print(context["lista_numeros_get"][0] )
+        print("number",number)
         for model in models:
             print(model)
             model_exactos = model.objects.filter(number1 =number[0],number2=number[1],number3=number[2],number4=number[3],number5=number[4],number6=number[5],number7=number[6],number8=number[7],number9=number[8],number10=number[9],number11=number[10],number12=number[11],number13=number[12],number14=number[13])
