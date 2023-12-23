@@ -199,7 +199,7 @@ def find_modelo(path):
     lista_path_modelos = [["/estadisticas-kino/",Kinodb],["/estadisticas-rekino/",Rekinodb],["/estadisticas-chanchito/",Chanchitodb],
                           ["/estadisticas-combo/",Combodb],["/estadisticas-chao1/",Chao1db],["/estadisticas-chao2/",Chao2db],["/estadisticas-chao3/",Chao3db],
                           ["/kino/",Kinodb],["/rekino/",Rekinodb],["/chanchito/",Chanchitodb],["/combo/",Combodb],["/chao1/",Chao1db], ["/chao2/",Chao2db],["/chao3/",Chao3db],
-                          ["/kino_admin/",Kinodb],["/rekino_admin/",Rekinodb],["/chanchito_admin/",Chanchitodb],["/combo_admin/",Combodb],["/chao1_admin/",Chao1db], ["/chao2_admin/",Chao2db],["/chao3_admin/",Chao3db]               
+                          ["/kino-admin/",Kinodb],["/rekino-admin/",Rekinodb],["/chanchito-admin/",Chanchitodb],["/combo-admin/",Combodb],["/chao1-admin/",Chao1db], ["/chao2-admin/",Chao2db],["/chao3-admin/",Chao3db]               
                           ]
     for elemento in lista_path_modelos:
         if path in elemento[0]:
