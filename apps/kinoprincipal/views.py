@@ -36,13 +36,6 @@ def resultados(request):
     context = {'RESULTADO': resultado,'database_title':modelo, 'database': modelo.__name__,'len_resultado':len_resultado}
     return render(request, 'ver_bd.html', context)
 
-def resultados_admin(request):
-    path = request.path
-    modelo = find_modelo(path)
-    resultado = modelo.objects.all()
-    len_resultado = len(list(resultado))
-    context = {'RESULTADO': resultado,'database_title':modelo, 'database': modelo.__name__,'len_resultado':len_resultado}
-    return render(request, 'ver_bd_admin.html', context)
 
 def upload_file(request):
     lista_excel = Archivosxl.objects.all
@@ -75,12 +68,6 @@ def agregar_a_db(request, pk):
     return redirect('archivos_index')
 
 
-def delete_row(request, model_name, pk):
-    row = get_object_or_404(apps.get_model('kinoprincipal', model_name +""), pk=pk)
-    row.delete()
-    #print("URL: ", model_name.lower()[:-2] + "_index")
-    url = model_name.lower()[:-2] + "_index"
-    return redirect(url)
 
 
 def estadisticas(request):
