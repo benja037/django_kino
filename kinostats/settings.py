@@ -32,6 +32,7 @@ DEBUG = os.environ.get('DEBUG')
 ALLOWED_HOSTS = [
     'kino-django-render.onrender.com',
     'localhost'
+    'kino-django-render.onrender.com/admin'
 ]
 
 
