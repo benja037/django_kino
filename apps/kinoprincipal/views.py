@@ -2,9 +2,10 @@ from django.http.response import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import UploadFileForm
 from .models import Archivosxl, Kinodb, Rekinodb, Chanchitodb, Combodb, Chao1db, Chao2db, Chao3db
-from .excel import Importar_datos
+from .excel import Importar_datos,fetch_kino_results
 from django.apps import apps
 from statistics import mode
+
 # Refrigerador.objects.latest('fecha_registro')
 
 
@@ -191,3 +192,15 @@ def find_modelo(path):
     for elemento in lista_path_modelos:
         if path in elemento[0]:
             return elemento[1]
+        
+
+
+def mostrar_semi_automatico(request):    
+    context = {}
+    if(request.GET.get("num_sorteo")):
+        num_sorteo = int(request.GET.get("num_sorteo"))
+        fetch_kino_results(num_sorteo)   
+
+    
+
+    return render(request, 'semi-automatico.html',context)
