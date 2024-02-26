@@ -21,6 +21,7 @@ urlpatterns = [
     path('estadisticas-chao2/', views.estadisticas, name='estadisticas_chao2_index'),
     path('estadisticas-chao3/', views.estadisticas, name='estadisticas_chao3_index'),
     path('coincidencias/',views.mostrar_coincidencias,name='coincidencias_index'),
+    path('semi-automatico/',views.mostrar_semi_automatico,name='semi_automatico_index'),
 
     #Url de botones
     path('delete/<str:model_name>/<int:pk>/',
